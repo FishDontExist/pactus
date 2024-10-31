@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your forked repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: FishDontExist/pactus
           token: ${{ secrets.GITHUB_TOKEN }}
