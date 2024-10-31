@@ -3,17 +3,20 @@ name: Sync Fork
 on:
   push:
     branches:
-      - sync-fork
+      - "sync-fork"
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+  
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your forked repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: FishDontExist/pactus
           token: ${{ secrets.GITHUB_TOKEN }}
